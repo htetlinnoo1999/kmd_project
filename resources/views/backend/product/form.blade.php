@@ -1,0 +1,7 @@
+@include('backend.partials.inputs.selectbox', ['name' => 'category_id', 'title' => 'Category', 'options' => $categories, 'placeHolder' => "--Select Product's category--"])
+@include('backend.partials.inputs.selectbox', ['name' => 'brand_id', 'title' => 'Brand', 'options' => $brands, 'placeHolder' => "--Select Product's Brand--"])
+@include('backend.partials.inputs.textbox', ['name' => 'name', 'title' => 'Name','value' => $record->name ?? null])
+@include('backend.partials.inputs.textbox', ['name' => 'price', 'title' => 'Price', 'value' => $record->price ?? null, 'type' => 'number'])
+@include('backend.partials.inputs.textbox', ['name' => 'quantity', 'title' => 'Quantity', 'value' => $record->quantity ?? null, 'type' => 'number'])
+@include('backend.partials.inputs.image', ['name' => 'photo', 'title' => 'Logo'])
+@include('backend.partials.inputs.submit_button',['title'=>'Product'])
