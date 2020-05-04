@@ -28,8 +28,12 @@ Route::group([
 
 Route::any('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::prefix('admins')->group(function () {
+Route::prefix('admin')->group(function () {
     Auth::routes();
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
