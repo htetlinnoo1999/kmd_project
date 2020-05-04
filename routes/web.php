@@ -26,6 +26,14 @@ Route::group([
     include_route_files(__DIR__ . '/backend/');
 });
 
+Route::group([
+    'namespace' => 'Frontend',
+    'as' => 'user.',
+], function () {
+
+    include_route_files(__DIR__ . '/frontend/');
+});
+
 Route::any('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::prefix('admin')->group(function () {
