@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('payment_type');
             $table->string('amount');
+            $table->tinyInteger('status')->default(0); //changing status 1 will be delivered order.
             $table->timestamps();
         });
     }
