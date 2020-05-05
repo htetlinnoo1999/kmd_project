@@ -19,7 +19,7 @@
                                         <h5 class="card-title" style="min-height: 3rem"> {{$product->name}}</h5>
                                         <p class="card-text"> {{$product->price}} MMK</p>
 
-                                        <button href="#" class="btn btn-primary btn-block">Order</button>
+                                        <a href="/cart/add/{{$product->id}}" class="btn btn-primary btn-block">Order</a>
                                     </div>
                                 </div>
 

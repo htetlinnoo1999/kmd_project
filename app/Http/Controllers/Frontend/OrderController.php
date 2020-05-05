@@ -8,4 +8,6 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     //todo: order functions! Luv u dude! xP
+
+
 }
