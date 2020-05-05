@@ -11,6 +11,12 @@ class ShoppingCartController extends Controller
 {
     //todo: write shopping cart functions! THANKS for ur help dude! I wont forget that!
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
         $cart = Cart::content();

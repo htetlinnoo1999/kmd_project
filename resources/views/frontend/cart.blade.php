@@ -69,7 +69,7 @@
                             </tr>
                             </tbody>
                         </table>
-                        <button class="btn btn-block btn-primary">Place order</button>
+                        <a href="/order" class="btn btn-block btn-primary">Place order</a>
                         <a href="/cart/cancel" class="btn btn-block btn-secondary">Cancel</a>
                     </div>
                 </div>

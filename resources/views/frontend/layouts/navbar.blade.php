@@ -12,17 +12,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="/cart">Your Cart</a>
             </li>
+            @auth
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    {{Auth::user()->name}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
                 </div>
             </li>
+            @endauth
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>
