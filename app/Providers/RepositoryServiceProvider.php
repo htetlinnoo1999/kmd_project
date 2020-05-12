@@ -24,7 +24,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $models = ['Category', 'Brand', 'Product'];
+        $models = ['Category', 'Brand', 'Product', 'Order'];
         foreach ($models as $model) {
             $this->app->bind("App\Repositories\Contracts\\{$model}Contract",
                 "App\Repositories\\{$model}Repository");

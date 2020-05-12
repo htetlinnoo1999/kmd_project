@@ -27,7 +27,6 @@ class OrderController extends Controller
         $order->user_id = Auth::id();
         $order->payment_type = "cash";
         $order->amount = $total;
-        $order->status = 1;
         $order->save();
 
         foreach($cart as $item){
@@ -36,7 +35,7 @@ class OrderController extends Controller
 
         Cart::destroy();
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Your order is successful.');
 
 
     }

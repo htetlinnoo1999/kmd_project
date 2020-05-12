@@ -23,6 +23,7 @@
 </head>
 <body>
 @include('frontend/layouts/navbar')
+@include('backend.partials.flash-message')
 @yield('content')
 
 
