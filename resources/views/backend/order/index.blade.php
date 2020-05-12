@@ -27,7 +27,7 @@
                         <td>{{$record->user->name}}</td>
                         <td>{{$record->payment_type}}</td>
                         <td>{{$record->amount}}</td>
-                        <td>{{$record->status == 0 ? 'un-delivered': 'delivered'}}</td>
+                        <td class="@if($record->status == 0) text-red @else text-green @endif">{{$record->status == 0 ? 'un-delivered': 'delivered'}}</td>
                     </tr>
                 @endforeach
                 </tbody>
