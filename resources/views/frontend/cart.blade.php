@@ -19,15 +19,20 @@
                                 <div class="col-lg-6 col-4 mt-2">
                                     <h5 class="mb-3"><b>{{$item->name}}</b></h5>
                                     <span>Quantity</span>
-                                    <form id="quantity" method="post" action="{{route('user.cart.update')}}">
-                                        @csrf
-                                        <input name="quantity" class="form-control" style="width: 4.5rem;" min="0" type="number"
-                                               value="{{$item->qty}}">
-                                        <input type="hidden" name="rowId" value="{{$item->rowId}}">
-                                        <a href="" id="submit" onclick="update()"><u>update</u></a>
-                                    </form>
-
-                                    <a href="/cart/remove/{{$item->rowId}}"><u>delete</u></a>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form id="quantity" method="post" action="{{route('user.cart.update')}}">
+                                                @csrf
+                                                <input name="quantity" class="form-control mb-3" style="width: 4.5rem;" min="0" type="number"
+                                                       value="{{$item->qty}}">
+                                                <input type="hidden" name="rowId" value="{{$item->rowId}}">
+                                                <a href="" id="submit" onclick="update()" class="btn btn-success">Update</a>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6 mt-5 pt-1">
+                                            <a href="/cart/remove/{{$item->rowId}}" class="btn btn-danger">Delete</a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-lg-3 col-4 mt-2 d-flex justify-content-end">
                                     <div>
