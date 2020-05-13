@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BrandRequest;
 use App\Repositories\Contracts\BrandContract;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,7 @@ class BrandController extends Controller
     public function __construct(BrandContract $brandContract)
     {
         $this->brandContract = $brandContract;
+        $this->middleware(['role:Super Admin|Admin|Data Entry Admin']);
     }
 
     /**
@@ -48,7 +50,7 @@ class BrandController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(BrandRequest $request)
     {
         //
         $this->brandContract->create($request->all());

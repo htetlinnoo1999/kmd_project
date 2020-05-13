@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 use App\Repositories\Contracts\CategoryContract;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,7 @@ class CategoryController extends Controller
     {
 
         $this->categoryContract = $categoryInterface;
+        $this->middleware(['role:Super Admin|Admin|Data Entry Admin']);
     }
 
     /**
@@ -48,7 +50,7 @@ class CategoryController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $this->categoryContract->create($request->all());
         return redirect()->route('admin.category.index')->with('success', "New Category is created successfully!");

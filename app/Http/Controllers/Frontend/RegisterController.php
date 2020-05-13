@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     //
-    public function register()
+    public function userRegister()
     {
         return view('frontend.auth.register');
     }

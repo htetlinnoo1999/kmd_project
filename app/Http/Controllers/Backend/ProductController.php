@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Repositories\Contracts\BrandContract;
 use App\Repositories\Contracts\CategoryContract;
 use App\Repositories\Contracts\ProductContract;
@@ -60,7 +61,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         //
         $this->productContract->create($request->all());

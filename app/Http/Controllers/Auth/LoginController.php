@@ -45,7 +45,7 @@ class LoginController extends Controller
         if($role == 'user') {
             return "/";
         }else {
-            return "/admin";
+            return "/admin/dashboard";
         }
     }
 }

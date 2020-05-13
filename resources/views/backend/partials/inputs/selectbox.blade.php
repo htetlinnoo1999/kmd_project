@@ -7,6 +7,8 @@
         @endforeach
     </select>
 </div>
-
+@error($name)
+<h5 class="text-danger">{{$message}}</h5>
+@enderror
 
 

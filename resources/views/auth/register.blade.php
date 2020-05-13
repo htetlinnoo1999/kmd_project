@@ -44,7 +44,8 @@
                             <div class="col-md-6">
                                 <select class="form-control" id="role" name="role">
                                     <option>Admin</option>
-                                    <option>SuperAdmin</option>
+                                    <option>Super Admin</option>
+                                    <option>Data Entry Admin</option>
                                 </select>
                             </div>
                         </div>
