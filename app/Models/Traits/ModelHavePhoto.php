@@ -46,15 +46,15 @@ trait ModelHavePhoto
         });
     }
 
-    protected function getPhotoAttribute($value)
-    {
-        return $this->url($value);
-    }
-
-    protected function getLogoAttribute($value)
-    {
-        return $this->url($value);
-    }
+//    protected function getPhotoAttribute($value)
+//    {
+//        return $this->url($value);
+//    }
+//
+//    protected function getLogoAttribute($value)
+//    {
+//        return $this->url($value);
+//    }
 
     protected function getImageAttribute($value)
     {

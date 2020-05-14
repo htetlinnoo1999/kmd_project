@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
 {
-    //todo: write shopping cart functions! THANKS for ur help dude! I wont forget that!
 
     public function __construct()
     {
@@ -32,7 +31,7 @@ class ShoppingCartController extends Controller
     {
         $product = Product::find($id);
         Cart::setGlobalTax(0);
-        Cart::add($product->id, $product->name, 1, $product->price);
+        Cart::add($product->id, $product->name, 1, $product->price, 0, ['photo' => $product->photo]);
         return redirect('/');
     }
 

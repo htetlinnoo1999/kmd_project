@@ -12,9 +12,16 @@
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-lg-3 col-4">
-                                    <img class="border img-fluid"
-                                         src="https://cnet1.cbsistatic.com/img/QEOIYo5JTgXV3xW5kYLW1_PMXVI=/822x959/2020/04/15/53146b79-7cce-414a-a134-2c14ecd089bb/iphone-se-all-colors.jpg"
-                                         alt="">
+                                    @if($item->options['photo'] != 'default_photo.jpg')
+                                        <img class="border img-fluid"
+                                             src="{{asset('storage/'.$item->options['photo'])}}"
+                                             alt="">
+                                    @else
+                                        <img class="border img-fluid"
+                                             src="https://cnet1.cbsistatic.com/img/QEOIYo5JTgXV3xW5kYLW1_PMXVI=/822x959/2020/04/15/53146b79-7cce-414a-a134-2c14ecd089bb/iphone-se-all-colors.jpg"
+                                             alt="">
+                                    @endif
+
                                 </div>
                                 <div class="col-lg-6 col-4 mt-2">
                                     <h5 class="mb-3"><b>{{$item->name}}</b></h5>

@@ -6,7 +6,7 @@
     @include('backend.partials.flash-message')
     <div class="main-card mb-3 card">
         <div class="card-body">
-            <h5 class="card-title">Brands table</h5>
+            <h5 class="card-title">Products table</h5>
             <table class="mb-0 table table-striped">
                 <thead>
                 <tr>
