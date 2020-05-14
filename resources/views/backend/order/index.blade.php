@@ -13,6 +13,7 @@
                     <th></th>
                     <th>Customer Name</th>
                     <th>Payment Type</th>
+                    <th>Products</th>
                     <th>Total Amount</th>
                     <th>Delivered</th>
 
@@ -22,10 +23,11 @@
                 @foreach($records as $record)
                     <tr>
                         <td>
-                            <a class='waves-effect btn btn-success' data-value={{$record->id}} href={{route('admin.order.delivered', $record->id)}}><span class='fa fa-eye'></span></a>
+                            <a class='waves-effect btn btn-success' data-value={{$record->id}} href={{route('admin.order.delivered', $record->id)}}><span class='fa fa-shopping-cart'></span></a>
                         </td>
                         <td>{{$record->user->name}}</td>
                         <td>{{$record->payment_type}}</td>
+                        <td>({{$products[$record->id]}})</td>
                         <td>{{$record->amount}}</td>
                         <td class="@if($record->status == 0) text-red @else text-green @endif">{{$record->status == 0 ? 'un-delivered': 'delivered'}}</td>
                     </tr>

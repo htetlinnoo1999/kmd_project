@@ -29,6 +29,7 @@ class ProductController extends Controller
         $this->brandContract = $brandContract;
         $this->categoryContract = $categoryContract;
         $this->productContract = $productContract;
+        $this->middleware('role:Super Admin|Admin');
     }
 
     /**

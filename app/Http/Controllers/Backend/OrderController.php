@@ -16,12 +16,17 @@ class OrderController extends Controller
     public function __construct(OrderContract $orderContract)
     {
         $this->orderContract = $orderContract;
+        $this->middleware('role:Super Admin|Admin');
     }
 
     public function index()
     {
-        $records = $this->orderContract->withRelations('user')->paginate(10);
-        return view('backend.order.index', compact('records'));
+        $records = $this->orderContract->withRelations(['user','product'])->paginate(10);
+        $products = array();
+        foreach ($records as $record){
+            $products[$record->id] = implode(',', $record->product->pluck('name')->all());
+        }
+        return view('backend.order.index', compact('records', 'products'));
     }
 
     public function delivered($id)
